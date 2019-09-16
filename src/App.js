@@ -13,7 +13,7 @@ class App extends Component {
       streams: true,
       info: false,
       timetable: false,
-      activePage: "streams"
+      activePage: "streams" //change state if developing another page
     }
     this.switchpage = this.switchpage.bind(this);
   }

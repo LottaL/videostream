@@ -1,0 +1,67 @@
+{
+    "program": [
+        {
+            "name": "Ohjelmaa",
+            "location": "Tapahtumatorin lava",
+            "startTime": "09:00:00",
+            "endTime": "11:15:00",
+            "stream": false
+        },
+        {
+            "name": "Ohjelmaa",
+            "location": "Tapahtumatorin lava",
+            "startTime": "12:15:00",
+            "endTime": "15:00:00",
+            "stream": false
+        },
+        {
+            "name": "Avajaiset",
+            "location": "Leppävaaran Stadion",
+            "startTime": "11:30:00",
+            "endTime": "12:00:00",
+            "stream": false
+        },
+        {
+            "name": "Tapahtumapisteet",
+            "location": "Leppävaaran urheilupuisto (useita pisteitä)",
+            "startTime": "14:15:00",
+            "endTime": "15:00:00",
+            "stream": false
+        },
+        {
+            "name": "AKK Motorsport",
+            "location": "Tapahtumatori",
+            "startTime": "14:15:00",
+            "endTime": "16:00:00",
+            "stream": false
+        },
+        {
+            "name": "Luisteluliiton piste",
+            "location": "Warrior Areenan parkkipaikka",
+            "startTime": "14:15:00",
+            "endTime": "16:00:00",
+            "stream": false
+        },
+        {
+            "name": "dummy",
+            "location": "bla",
+            "startTime": "21:15:00",
+            "endTime": "21:50:00",
+            "stream": false
+        },
+        {
+            "name": "dummy",
+            "location": "Warrior Areenan parkkipaikka",
+            "startTime": "22:00:00",
+            "endTime": "22:30:00",
+            "stream": true
+        },
+        {
+            "name": "dummy",
+            "location": "Warrior Areenan parkkipaikka",
+            "startTime": "21:00:00",
+            "endTime": "23:00:00",
+            "stream": false
+        }
+    ]
+}

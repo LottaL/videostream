@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Streams from "../Pages/Streams";
 
 class Navbar extends Component {
 
@@ -8,15 +7,15 @@ class Navbar extends Component {
     this.state = {
         pages: ["streams", "info", "timetable"]
     }
-
   }
-
 
   render() {
     return (     
         <div id="navbar" style={navstyle}>
             {this.state.pages.map(e => 
-                <div key={e} style={(this.props.activePage === e) ? navactive : navbuttonstyle} onClick={() => this.props.switchpage(e)}>
+                <div key={e} 
+                    style={(this.props.activePage === e) ? navactive : navbuttonstyle} 
+                    onClick={() => this.props.switchpage(e)}>
                     {e}
                 </div>
                 )}
