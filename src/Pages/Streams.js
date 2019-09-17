@@ -3,62 +3,65 @@ import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-import Player from '../Components/Player';
+import Videomodal from '../Components/Videomodal';
 
-import $ from 'jquery';
-
-function Streams() {
-
-    const showPlayer = false;
-
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  let name = 'playerElement1';
-
-  function openStream(streamName) {
-
-   /* try {
-    //name = await streamName;
-    console.log(name);
-    if(name){
-      handleShow();
+class Streams extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      player1: false,
+      player2: false,
+      player3: false,
+      player4: false
     }
-    
-  } catch(e){
-    console.log(e);
-  }*/
+    this.openStream = this.openStream.bind(this);
   }
 
-  
+  name = 'playerElement1';
+
+  openStream(target) {
+    //toggles videomodal visibility
+    let currentState = this.state[target];
+    this.setState( {
+      player1: false,
+      player2: false,
+      player3: false,
+      player4: false
+    } );
+    this.setState( {
+      [target]: !currentState
+    } )
+  }
+
+  render() {
     return (
       <div id="streams" className="page">
-
-        {/* Modal */}
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Stream</Modal.Title>
-          </Modal.Header>
-            <Modal.Body>
-            Insert stream here
-            {/* name ? <Player name="playerElement1"/> : <p>not {name}</p> */}
-            <video width="640" height="400" controls="controls" src="http%3A%2F%2F195.148.104.124%3A1935%2Fmobile%2Flottastream%2Fplaylist.m3u8"></video>
-            </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-          </Button>
-          </Modal.Footer>
-        </Modal>
-
-        {showPlayer ? <Player name="playerElement1"/> : ""}
+        {/*Videomodals expecting to be visible*/}
+        <Videomodal 
+          closeStream={this.openStream} 
+          componentID='playerElement1'
+          showStream={this.state.player1}
+          player='player1'/>
+        <Videomodal 
+          closeStream={this.openStream} 
+          componentID='playerElement2'
+          showStream={this.state.player2}
+          player='player2'/>
+        <Videomodal 
+          closeStream={this.openStream} 
+          componentID='playerElement3'
+          showStream={this.state.player3}
+          player='player3'/>
+        <Videomodal 
+          closeStream={this.openStream} 
+          componentID='playerElement4'
+          showStream={this.state.player4}
+          player='player4'/>
 
         <div className="container">
           <div className="row">
 
-            <div className="card col-3" style={cardStyle} onClick={() => openStream('playerElement1')}>
+            <div className="card col-3" style={cardStyle} onClick={() => this.openStream('player1')}>
               <img src="" className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">Stream 1</h5>
@@ -67,7 +70,7 @@ function Streams() {
               </div>
             </div>
 
-            <div className="card col-3" style={cardStyle} onClick={() => openStream('playerElement1')}>
+            <div className="card col-3" style={cardStyle} onClick={() => this.openStream('player2')}>
               <img src="" className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">Stream 2</h5>
@@ -76,7 +79,7 @@ function Streams() {
               </div>
             </div>
 
-            <div className="card col-3" style={cardStyle} onClick={() => openStream('playerElement1')}>
+            <div className="card col-3" style={cardStyle} onClick={() => this.openStream('player3')}>
               <img src="" className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">Stream 3</h5>
@@ -85,7 +88,7 @@ function Streams() {
               </div>
             </div>
 
-            <div className="card col-3" style={cardStyle} onClick={() => openStream('playerElement1')}>
+            <div className="card col-3" style={cardStyle} onClick={() => this.openStream('player4')}>
               <img src="" className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">Stream 4</h5>
@@ -100,6 +103,7 @@ function Streams() {
       </div>
     )
   }
+}
 
 
 const cardStyle = {

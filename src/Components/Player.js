@@ -8,17 +8,19 @@ class Player extends Component {
 
   render() {
     return (
-      
-            <div id={this.props.name} style={{
-              position: "absolute",
-              width:this.props.width || '100%',
-             height:this.props.height || 0, 
-             paddingBottom:this.props.paddingBottom || '54.25%',
-             paddingLeft:this.props.paddingLeft || 0,
-             paddingRight:this.props.paddingRight || 0,
-             paddingTop:this.props.paddingTop || 0}}></div>
+      <div id={this.props.name} style={playerstyle}></div>
     )
   }
+}
+
+const playerstyle = {
+  width:'100%',
+  height: 0, 
+  paddingBottom: '54.25%',
+  paddingLeft: 0,
+  paddingRight: 0,
+  paddingTop: 0,
+  zIndex: "2"
 }
 
 const modalstyle = {
