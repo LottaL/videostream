@@ -12,7 +12,7 @@ class Videomodal extends Component {
     return (     
             <div id="videomodal" style={this.props.showStream ? {} : {display: "none"}}>
               <div id="closebuttonheader" style={{textAlign: "right"}}>
-                <button onClick={() => this.props.closeStream(this.props.player)}>x</button>
+                <button onClick={this.props.togglestream}>x</button>
               </div>
               <div id={this.props.componentID} style={playerstyle}></div>
             </div>

@@ -36,32 +36,9 @@ class Streams extends Component {
   render() {
     return (
       <div id="streams" className="page">
-        {/*Videomodals expecting to be visible*/}
-        <Videomodal 
-          closeStream={this.openStream} 
-          componentID='playerElement1'
-          showStream={this.state.player1}
-          player='player1'/>
-        <Videomodal 
-          closeStream={this.openStream} 
-          componentID='playerElement2'
-          showStream={this.state.player2}
-          player='player2'/>
-        <Videomodal 
-          closeStream={this.openStream} 
-          componentID='playerElement3'
-          showStream={this.state.player3}
-          player='player3'/>
-        <Videomodal 
-          closeStream={this.openStream} 
-          componentID='playerElement4'
-          showStream={this.state.player4}
-          player='player4'/>
-
         <div className="container">
           <div className="row">
-
-            <div className="card col-3" style={cardStyle} onClick={() => this.openStream('player1')}>
+            <div className="card col-3" style={cardStyle} onClick={this.props.togglestream}>
               <img src="" className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">Stream 1</h5>
@@ -70,7 +47,7 @@ class Streams extends Component {
               </div>
             </div>
 
-            <div className="card col-3" style={cardStyle} onClick={() => this.openStream('player2')}>
+            <div className="card col-3" style={cardStyle}>
               <img src="" className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">Stream 2</h5>
@@ -79,7 +56,7 @@ class Streams extends Component {
               </div>
             </div>
 
-            <div className="card col-3" style={cardStyle} onClick={() => this.openStream('player3')}>
+            <div className="card col-3" style={cardStyle}>
               <img src="" className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">Stream 3</h5>
@@ -88,7 +65,7 @@ class Streams extends Component {
               </div>
             </div>
 
-            <div className="card col-3" style={cardStyle} onClick={() => this.openStream('player4')}>
+            <div className="card col-3" style={cardStyle}>
               <img src="" className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">Stream 4</h5>

@@ -23,7 +23,7 @@ class Banner extends Component {
 
 const bannerstyle = {
     backgroundColor: "#00b6f0",
-    width: "100vw",
+    width: "100%",
     color: "white"
 }
 

@@ -5,6 +5,7 @@ import Banner from './Pages/Banner';
 import Streams from './Pages/Streams';
 import Info from './Pages/Info';
 import Timetable from './Pages/Timetable';
+import Videomodal from './Components/Videomodal';
 
 class App extends Component {
   constructor(props) {
@@ -13,9 +14,14 @@ class App extends Component {
       streams: true,
       info: false,
       timetable: false,
-      activePage: "streams" //change state if developing another page
+      activePage: "streams", //change state if developing another page
+      showplayer: false
     }
     this.switchpage = this.switchpage.bind(this);
+  }
+
+  togglestream = () => {
+    this.setState( {showplayer: !this.state.showplayer} )
   }
 
   switchpage = (target) => {
@@ -34,7 +40,12 @@ class App extends Component {
     return (
     <div className="App">
       <Banner switchpage={this.switchpage} activePage={this.state.activePage}/>
-      {this.state.streams && <Streams/>}
+      <Videomodal 
+          togglestream={this.togglestream} 
+          componentID='playerElement1'
+          showStream={this.state.showplayer}
+          player='player1'/>
+      {this.state.streams && <Streams togglestream={this.togglestream}/>}
       {this.state.info && <Info/>}
       {this.state.timetable && <Timetable/>}
     </div>
